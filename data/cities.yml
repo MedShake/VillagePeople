@@ -1,0 +1,56 @@
+#
+# This file is part of MedShake's Village People.
+#
+# Copyright (c) 2019
+# Bertrand Boutillier <b.boutillier@gmail.com>
+# http://www.medshake.net
+#
+# MedShake's Village People is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# MedShake's Village People is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with MedShake's Village People. If not, see <http://www.gnu.org/licenses/>.
+#/
+
+##
+# Definition of cities
+# (the first level is the postal code)
+#
+# @author Bertrand Boutillier <b.boutillier@gmail.com>
+#
+#
+
+22101:
+  name: Sainte Lune
+  streets:
+    - rue du port
+    - rue de la mer
+    - rue des dauphins
+    - place de l'église
+    - boulevard de l'écluse
+    - rue du stade
+    - rue de la poste
+    - boulevard de la libération
+    - place de la mairie
+    - rue de de la forge
+    - rue des lilas
+22102:
+  name: Port Tranquille
+  streets:
+    - rue des sardines
+    - place du marché
+    - impasse des huitres
+    - rue des marins
+    - rue du petit train
+    - place du 6 juin 1944
+    - boulevard de la mer
+    - rue du gros rocher
+    - boulevard du menhir
+    - rue des ânes

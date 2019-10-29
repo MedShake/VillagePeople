@@ -1,0 +1,37 @@
+#
+# This file is part of MedShake's Village People.
+#
+# Copyright (c) 2019
+# Bertrand Boutillier <b.boutillier@gmail.com>
+# http://www.medshake.net
+#
+# MedShake's Village People is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# MedShake's Village People is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with MedShake's Village People. If not, see <http://www.gnu.org/licenses/>.
+#/
+
+##
+# Size / weight for adult men
+#
+# @author Bertrand Boutillier <b.boutillier@gmail.com>
+# source for France : https://www.epsilon.insee.fr/jspui/bitstream/1/19240/1/estat_1981_132_3.pdf
+#
+#
+
+155: 62
+160: 66
+165: 69
+170: 73
+175: 76
+180: 80
+185: 84
+190: 87

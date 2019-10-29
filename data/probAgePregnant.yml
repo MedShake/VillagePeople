@@ -1,0 +1,65 @@
+#
+# This file is part of MedShake's Village People.
+#
+# Copyright (c) 2019
+# Bertrand Boutillier <b.boutillier@gmail.com>
+# http://www.medshake.net
+#
+# MedShake's Village People is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# MedShake's Village People is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with MedShake's Village People. If not, see <http://www.gnu.org/licenses/>.
+#/
+
+##
+# Fecundity by age
+# source for France :https://www.insee.fr/fr/statistiques/2381386#tableau-Donnes
+#
+# @author Bertrand Boutillier <b.boutillier@gmail.com>
+#
+#
+
+15: 0.7
+16: 2
+17: 4.1
+18: 7.4
+19: 14.5
+20: 22.3
+21: 32.2
+22: 41.3
+23: 52.4
+24: 66.4
+25: 80.4
+26: 96
+27: 111.7
+28: 124.3
+29: 132.5
+30: 137.9
+31: 138.1
+32: 131
+33: 120.8
+34: 108.5
+35: 96.2
+36: 83
+37: 68.7
+38: 55.8
+39: 44.7
+40: 34.3
+41: 25.4
+42: 17
+43: 10.9
+44: 6.1
+45: 3.2
+46: 1.7
+47: 0.8
+48: 0.4
+49: 0.3
+50: 0.2

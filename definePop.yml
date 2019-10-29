@@ -1,0 +1,54 @@
+#
+# This file is part of MedShake's Village People.
+#
+# Copyright (c) 2019
+# Bertrand Boutillier <b.boutillier@gmail.com>
+# http://www.medshake.net
+#
+# MedShake's Village People is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# MedShake's Village People is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with MedShake's Village People. If not, see <http://www.gnu.org/licenses/>.
+#/
+
+##
+# Main configuration
+#
+# @author Bertrand Boutillier <b.boutillier@gmail.com>
+#
+#
+
+startID: 1
+numberOfPeople: 4000
+genders:
+  - f
+  - m
+newPersonMinAge: 23
+newPersonMaxAge: 35
+minAge: 0
+maxAge: 90
+minAgePregnancy: 18
+maxAgePregnancy: 44
+
+ageForJob : 22
+
+ageForPersonalMobilPhone: 15
+methodForMobilPhone: id #list or id
+mobilPhonePrefix: '06'
+
+methodForPhone: id #list or id
+phonePrefix: '02'
+
+ageForPersonalAddress: 20
+streetNumberMin: 1
+streetNumberMax: 50
+
+ageForPersonalEmail: 15

@@ -1,0 +1,135 @@
+#
+# This file is part of MedShake's Village People.
+#
+# Copyright (c) 2019
+# Bertrand Boutillier <b.boutillier@gmail.com>
+# http://www.medshake.net
+#
+# MedShake's Village People is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# MedShake's Village People is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with MedShake's Village People. If not, see <http://www.gnu.org/licenses/>.
+#/
+
+##
+# Number of persons per age in the reference population
+# source for France : https://www.insee.fr/fr/statistiques/1892088?sommaire=1912926
+#
+# @author Bertrand Boutillier <b.boutillier@gmail.com>
+#
+#
+
+0: 677969
+1: 690732
+2: 707054
+3: 726397
+4: 751334
+5: 762797
+6: 778563
+7: 786000
+8: 805980
+9: 799598
+10: 804211
+11: 796942
+12: 810699
+13: 791748
+14: 789433
+15: 787614
+16: 790935
+17: 804699
+18: 812009
+19: 770595
+20: 755992
+21: 729712
+22: 732447
+23: 716906
+24: 693279
+25: 691249
+26: 725780
+27: 738810
+28: 756645
+29: 765338
+30: 775747
+31: 781742
+32: 795086
+33: 793734
+34: 789177
+35: 780306
+36: 829011
+37: 837737
+38: 848914
+39: 803882
+40: 788140
+41: 792201
+42: 768385
+43: 790338
+44: 832961
+45: 879760
+46: 899550
+47: 894435
+48: 877492
+49: 864976
+50: 854770
+51: 850259
+52: 869002
+53: 871709
+54: 879404
+55: 868907
+56: 837856
+57: 838894
+58: 833849
+59: 827428
+60: 808901
+61: 802994
+62: 794551
+63: 784145
+64: 781088
+65: 763722
+66: 773065
+67: 754343
+68: 778931
+69: 761544
+70: 755014
+71: 736299
+72: 691879
+73: 516140
+74: 501605
+75: 483420
+76: 442973
+77: 390312
+78: 400929
+79: 413229
+80: 396346
+81: 379416
+82: 368689
+83: 346359
+84: 336852
+85: 307207
+86: 296580
+87: 267117
+88: 244281
+89: 202969
+90: 176990
+91: 148004
+92: 123808
+93: 102168
+94: 80325
+95: 61934
+96: 47205
+97: 34374
+98: 24225
+99: 10055
+100: 5359
+101: 3315
+102: 1877
+103: 1302
+104: 1171
+105: 1921
