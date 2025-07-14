@@ -24,14 +24,12 @@
 * Generate population 
 *
 * @author Bertrand Boutillier <b.boutillier@gmail.com>
+* @contrib Michaël Val
 *
 */
 
 ini_set('display_errors', 1);
 setlocale(LC_ALL, "fr_FR.UTF-8");
-
-/////////// Composer class auto-upload
-require 'vendor/autoload.php';
 
 spl_autoload_register(function ($class) {
     if (is_file('class/' . $class . '.php')) {
@@ -39,8 +37,8 @@ spl_autoload_register(function ($class) {
     }
 });
 
-foreach(Spyc::YAMLLoad('definePop.yml') as $k=>$v) {
-  define(mb_strtoupper($k), $v);
+foreach (yaml_parse_file('definePop.yml') as $k => $v) {
+    define(mb_strtoupper($k), $v);
 }
 
 array_map('unlink', glob("population/*.obj"));

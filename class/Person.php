@@ -24,6 +24,7 @@
 * Class: person
 *
 * @author Bertrand Boutillier <b.boutillier@gmail.com>
+* @contrib Michaël Val
 *
 */
 
@@ -285,11 +286,11 @@ class Person
 
      if($GLOBALS['incrementalId']+1 > NUMBEROFPEOPLE) return false;
 
-     $children = Spyc::YAMLLoad('data/childrenByFamily.yml');
+     $children = yaml_parse_file('data/childrenByFamily.yml');
      $numberOfChildren = $this->_getRandomWeightedElement($children);
      if($numberOfChildren === 0) return false;
 
-     $agesPregnant = array_map(function($el) { return $el * 100; }, Spyc::YAMLLoad('data/probAgePregnant.yml'));
+     $agesPregnant = array_map(function($el) { return $el * 100; }, yaml_parse_file('data/probAgePregnant.yml'));
      $pregnantAt=[];
      for($i=1; $i<=$numberOfChildren; $i++) {
        $randAge = $this->_getRandomWeightedElement($agesPregnant);
@@ -362,12 +363,12 @@ class Person
   private function _addSiblings() {
      if($GLOBALS['incrementalId']+1 > NUMBEROFPEOPLE) return;
 
-     $children = Spyc::YAMLLoad('data/childrenByFamily.yml');
+     $children = yaml_parse_file('data/childrenByFamily.yml');
      unset($children[0]);
      $numberOfChildren = $this->_getRandomWeightedElement($children);
      if($numberOfChildren === 1) return;
 
-     $agesPregnant = array_map(function($el) { return $el * 100; }, Spyc::YAMLLoad('data/probAgePregnant.yml'));
+     $agesPregnant = array_map(function($el) { return $el * 100; }, yaml_parse_file('data/probAgePregnant.yml'));
 
      if(isset($agesPregnant[$this->_motherPregnantAge])) {
        unset($agesPregnant[$this->_motherPregnantAge],$agesPregnant[($this->_motherPregnantAge+1)], $agesPregnant[($this->_motherPregnantAge-1)]);
@@ -438,7 +439,7 @@ class Person
 
      $mother = new Person();
 
-     $agesPregnant = array_map(function($el) { return $el * 100; }, Spyc::YAMLLoad('data/probAgePregnant.yml'));
+     $agesPregnant = array_map(function($el) { return $el * 100; }, yaml_parse_file('data/probAgePregnant.yml'));
      $this->setMotherPregnantAge($this->_getRandomWeightedElement($agesPregnant));
      $min = strtotime(($this->_age + $this->_motherPregnantAge)." years 365 days ago");
      $max = strtotime(($this->_age + $this->_motherPregnantAge)." years ago");
@@ -602,7 +603,7 @@ class Person
   }
 
   private function _getRandomName() {
-    $names = Spyc::YAMLLoad('data/name.yml');
+    $names = yaml_parse_file('data/name.yml');
     return $this->_getRandomWeightedElement($names);
   }
 
@@ -610,7 +611,7 @@ class Person
     $datetime = new DateTime($this->_birthdate);
     $y = $datetime->format('Y');
     $decade = floor($y/10) * 10;
-    $firstnames = Spyc::YAMLLoad('data/firstname-'.$this->_gender.'.yml')[$decade];
+    $firstnames = yaml_parse_file('data/firstname-'.$this->_gender.'.yml')[$decade];
     $firstname = $this->_getRandomWeightedElement($firstnames);
     while(in_array($firstname, $used)) {
       $firstname = $this->_getRandomWeightedElement($firstnames);
@@ -624,7 +625,7 @@ class Person
   }
 
   private function _getRandomBirthdate() {
-    $data = Spyc::YAMLLoad('data/numberOfPeoplePerAge.yml');
+    $data = yaml_parse_file('data/numberOfPeoplePerAge.yml');
     foreach($data as $k=>$v) {
       if($k < NEWPERSONMINAGE or $k > NEWPERSONMAXAGE) unset($data[$k]);
     }
@@ -637,7 +638,7 @@ class Person
   }
 
   private function _getRandomIsInRelationShip() {
-    $data = Spyc::YAMLLoad('data/peopleInRelationship.yml');
+    $data = yaml_parse_file('data/peopleInRelationship.yml');
     $decade = floor($this->getAge() / 10 ) * 10;
     if(!isset($data[$decade])) {
       $percents = 100;
@@ -648,7 +649,7 @@ class Person
   }
 
   private function _getRandomIsMarried() {
-    $data = Spyc::YAMLLoad('data/marriedCouples.yml');
+    $data = yaml_parse_file('data/marriedCouples.yml');
     $decade = floor($this->getAge() / 10 ) * 10;
     if(!isset($data[$decade])) {
       $percents = 100;
@@ -659,15 +660,24 @@ class Person
   }
 
   private function _getRandomJob() {
-    if($this->_age < AGEFORJOB) return '';
-    $jobs = Spyc::YAMLLoad('data/jobs-'.$this->_gender.'.yml');
+    if ($this->_age < AGEFORJOB) return '';
+
+    $jobs = yaml_parse_file('data/jobs-' . $this->_gender . '.yml');
+
+    // Check if $jobs is an array
+    if (!is_array($jobs)) {
+        // Handle the error, e.g., log it or return a default value
+        return ''; // or throw an exception
+    }
+
     return $jobs[array_rand($jobs)];
-  }
+}
+
 
   private function _getRandomMobilPhone() {
     if(METHODFORMOBILPHONE == 'list') {
       if($this->_age < AGEFORPERSONALMOBILPHONE) return '';
-      $mobilPhone = Spyc::YAMLLoad('data/mobilPhone.yml');
+      $mobilPhone = yaml_parse_file('data/mobilPhone.yml');
       return $mobilPhone[array_rand($mobilPhone)];
     } else {
       $id=str_pad($this->getId(),6,'0',STR_PAD_LEFT);
@@ -685,7 +695,7 @@ class Person
 
 
   private function _getRandomAdultHeightWeight() {
-    $data = Spyc::YAMLLoad('data/height-weight-'.$this->getGender().'.yml');
+    $data = yaml_parse_file('data/height-weight-'.$this->getGender().'.yml');
     $randomHeight = array_rand($data);
     $this->_height = $randomHeight + rand(0,4);
     $this->_weight = $data[$randomHeight] + rand(-10,10);

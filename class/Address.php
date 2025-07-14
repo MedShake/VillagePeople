@@ -24,6 +24,7 @@
 * Class: address
 *
 * @author Bertrand Boutillier <b.boutillier@gmail.com>
+* @contrib Michaël Val
 *
 */
 
@@ -63,7 +64,7 @@ class Address {
   }
 
   public function getRandomAddress() {
-    $cities = Spyc::YAMLLoad('data/cities.yml');
+    $cities = yaml_parse_file('data/cities.yml');
     $city = array_rand($cities);
     $this->_addressPostalCode = $city;
     $this->_addressCity = $cities[$city]['name'];
@@ -75,7 +76,7 @@ class Address {
 
   private function _getRandomPhone() {
     if(METHODFORPHONE == 'list') {
-      $phone = Spyc::YAMLLoad('data/phone.yml');
+      $phone = yaml_parse_file('data/phone.yml');
       return $phone[array_rand($phone)];
     } else {
       $id=str_pad($this->_personId, 6, '0', STR_PAD_LEFT);
